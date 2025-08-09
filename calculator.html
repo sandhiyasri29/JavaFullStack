@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background: #f7f7f7;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .calculator-container {
+        background: #fff;
+        max-width: 350px;
+        margin: 40px auto;
+        padding: 28px 24px 24px 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+    .calculator-container h2 {
+        text-align: center;
+        margin-bottom: 18px;
+        color: #333;
+        font-weight: 500;
+    }
+    .input-group {
+        margin-bottom: 16px;
+    }
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: #555;
+        font-size: 15px;
+    }
+    .calc-input {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+    }
+    .calc-input:focus {
+        border-color: #0078d4;
+        outline: none;
+    }
+    .calc-btn {
+        width: 100%;
+        padding: 10px 0;
+        background: #0078d4;
+        color: #eddbdb;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.2s;
+        margin-top: 8px;
+    }
+    .calc-btn:hover {
+        background: #005fa3;
+    }
+    .calc-result {
+        margin-top: 18px;
+        min-height: 24px;
+        text-align: center;
+        font-size: 18px;
+        color: #0078d4;
+        font-weight: 500;
+    }
+</style>
+<div class="calculator-container">
+        <h2>Calculator using JS</h2>
+        <div class="input-group">
+                <label for="a">First Number:</label>
+                <input type="text" id="a" class="calc-input">
+        </div>
+        <div class="input-group">
+                <label for="b">Second Number:</label>
+                <input type="text" id="b" class="calc-input">
+        </div>
+        <div class="input-group">
+                <label for="sym">Operator (+, -, *, /, %, **, //):</label>
+                <input type="text" id="sym" class="calc-input">
+        </div>
+        <button type="button" onclick="func1()" class="calc-btn">Calculate</button>
+        <div id="result" class="calc-result"></div>
+</div>
+
+
+<script>
+  console.log("Welcome");
+
+
+  function func1(){
+
+
+let num1=Number(document.getElementById("a").value);
+
+let num2  =Number(document.getElementById("b").value);
+  
+let operator = document.getElementById("sym").value;
+
+let result;
+
+if(isNaN(num1) || isNaN(num2)){
+    alert("please enter numbers");
+    result = "";
+}else if(operator === "+"){
+    result = num1 + num2;
+}else if(operator === "-"){
+    result = num1 - num2;
+}else if(operator === "/"){
+    result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+}else if(operator === "*"){
+    result = num1 * num2;
+}else if(operator === "%"){
+    result = num1 % num2;
+}else if(operator === "**"){
+    result = num1 ** num2;
+}else if(operator === "//"){
+    result = num2 !== 0 ? Math.floor(num1 / num2) : "Cannot divide by zero";
+}else{
+    result = "Invalid Operation";
+    alert("Please enter a valid operation");
+}
+
+document.getElementById("result").textContent = result;
+
+  }
+</script>
+
+</body>
+</html>
