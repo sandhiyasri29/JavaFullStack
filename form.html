@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Students Entity Table</title>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>Students Entity Table</title>
+    <h1>Students Details </h1>
+    <style>
+        h1{
+            text-align: center;
+            font-family:'Segoe UI', Arial, sans-serif;
+            color: rgb(11, 5, 17);
+        }
+        body {
+            background: #ebdde5;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 10px;
+            padding: 10px;
+        }
+        form {
+            background: #c9a6bf;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(233, 104, 6, 0.805);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #630958;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 18px;
+            border: 1px solid #7a0f71;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #e8d5e4;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: #d77009;
+            outline: none;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        .checkbox-group label,
+        .radio-group label {
+            display: inline-block;
+            margin-right: 16px;
+            font-weight: 400;
+        }
+        button[type="submit"] {
+            background: #d26409;
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #cc0ab2;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Enter the name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="department">Select the department:</label>
+        <select id="department" name="department">
+            <option value="" selected disabled>Select your department</option>
+            <option value="aids">AIDS</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="eee">EEE</option>
+            <option value="mech">MECH</option>
+            <option value="cyber">CYBER</option>
+        </select>
+
+        <label for="email">Enter the email:</label>
+        <input type="email" id="email" name="email">
+
+        <label>Transport:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="dayscholar" name="transport" value="Days Scholar">
+            <label for="dayscholar">Days Scholar</label>
+            <input type="checkbox" id="hosteller" name="transport" value="Hosteller">
+            <label for="hosteller">Hosteller</label>
+            <input type="checkbox" id="collegebus" name="transport" value="College Bus">
+            <label for="collegebus">College Bus</label>
+        </div>
+
+        <label for="cgpa">Select your CGPA</label>
+        <select id="cgpa" name="cgpa">
+            <option value="" selected disabled>Select your cgpa range</option>
+            <option value ="< than 60"> &lt; than 60% </option>
+            <option value="60-70">60%-70%</option>
+            <option value = "70-80">70%-80%</option>
+            <option value ="80-90">80%-90%</option>
+            <option value = ">90"> &gt;90% </option>
+        </select>
+
+        <label>Pick your gender</label>
+        <div class="radio-group">
+            <input type="radio" id="Female" name="gender" value="Female">
+            <label for="Female">Female</label>
+            <input type="radio" id="Male" name="gender" value="Male">
+            <label for="Male">Male</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
